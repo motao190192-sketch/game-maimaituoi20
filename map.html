@@ -1,67 +1,96 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<link rel="stylesheet" href="style.css">  
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bản đồ hành trình</title>
+<title>Hành trình khám phá</title>
+
+<link rel="stylesheet" href="style.css">
 
 <style>
 
-body{
-margin:0;
-background:#081b33;
-font-family:Arial;
+.map{
+width:100%;
+height:100vh;
+position:relative;
+background:linear-gradient(180deg,#0a2342,#123a63);
 overflow:hidden;
 }
 
-h1{
-color:white;
-text-align:center;
-padding:20px;
-}
-
-.map{
-position:relative;
-width:100%;
-height:85vh;
-background:linear-gradient(#0b2f59,#1b5d91);
+.title{
+position:absolute;
+top:25px;
+left:50%;
+transform:translateX(-50%);
+font-size:42px;
+font-weight:bold;
+color:#FFD54F;
+text-shadow:0 0 20px gold;
 }
 
 .stage{
 
 position:absolute;
 
-width:80px;
-height:80px;
+width:95px;
+height:95px;
 
 border-radius:50%;
-
-background:gold;
 
 display:flex;
 justify-content:center;
 align-items:center;
 
-font-size:30px;
-font-weight:bold;
+background:#1E88E5;
+
+font-size:40px;
 
 cursor:pointer;
 
-box-shadow:0 0 20px gold;
-
 transition:.3s;
+
+box-shadow:0 0 20px #29B6F6;
 
 }
 
 .stage:hover{
-transform:scale(1.15);
+
+transform:scale(1.12);
+
+}
+
+.lock{
+
+background:#555;
+
+box-shadow:none;
+
 }
 
 svg{
+
 position:absolute;
+
 width:100%;
+
 height:100%;
+
+}
+
+.info{
+
+position:absolute;
+
+right:20px;
+
+top:20px;
+
+background:rgba(255,255,255,.12);
+
+padding:15px;
+
+border-radius:15px;
+
 }
 
 </style>
@@ -70,33 +99,83 @@ height:100%;
 
 <body>
 
-<h1>🗺️ HÀNH TRÌNH MÃI MÃI TUỔI HAI MƯƠI</h1>
-
 <div class="map">
+
+<div class="title">
+
+🗺️ HÀNH TRÌNH KHÁM PHÁ
+
+</div>
+
+<div class="info">
+
+⭐ Điểm: 0
+
+<br><br>
+
+⏰ 00:00
+
+</div>
 
 <svg>
 
-<line x1="10%" y1="75%" x2="30%" y2="60%" stroke="white" stroke-width="6"/>
+<path d="M120 650 C250 560 330 520 390 430 S620 300 720 220 S900 120 1030 80"
 
-<line x1="30%" y1="60%" x2="50%" y2="35%" stroke="white" stroke-width="6"/>
+stroke="#FFD54F"
 
-<line x1="50%" y1="35%" x2="70%" y2="50%" stroke="white" stroke-width="6"/>
+stroke-width="8"
 
-<line x1="70%" y1="50%" x2="88%" y2="20%" stroke="white" stroke-width="6"/>
+fill="none"
+
+stroke-linecap="round"/>
 
 </svg>
 
-<div class="stage" style="left:8%;top:70%;" onclick="location='stage1.html'">1</div>
+<div class="stage"
 
-<div class="stage" style="left:28%;top:55%;" onclick="location='stage2.html'">2</div>
+style="left:70px;bottom:60px;"
 
-<div class="stage" style="left:48%;top:30%;" onclick="location='stage3.html'">3</div>
+onclick="alert('Chặng 1 sẽ được làm ở bước tiếp theo')">
 
-<div class="stage" style="left:68%;top:45%;" onclick="location='stage4.html'">4</div>
-
-<div class="stage" style="left:86%;top:15%;" onclick="location='stage5.html'">🏆</div>
+🏠
 
 </div>
+
+<div class="stage lock"
+
+style="left:320px;bottom:240px;">
+
+🚂
+
+</div>
+
+<div class="stage lock"
+
+style="left:560px;bottom:390px;">
+
+🌲
+
+</div>
+
+<div class="stage lock"
+
+style="left:820px;bottom:500px;">
+
+⚔️
+
+</div>
+
+<div class="stage lock"
+
+style="right:70px;top:60px;">
+
+🏆
+
+</div>
+
+</div>
+
 <script src="script.js"></script>
+
 </body>
 </html>
