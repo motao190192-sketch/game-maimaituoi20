@@ -1,1 +1,151 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Chặng 1</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:linear-gradient(180deg,#0a2342,#1565c0);
+    color:white;
+    text-align:center;
+}
+
+.container{
+    padding:40px;
+}
+
+h1{
+    color:#FFD54F;
+    font-size:40px;
+    text-shadow:0 0 15px gold;
+}
+
+.book{
+    background:white;
+    color:#333;
+    max-width:700px;
+    margin:30px auto;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 0 25px black;
+}
+
+button{
+    padding:15px 30px;
+    font-size:20px;
+    border:none;
+    border-radius:15px;
+    cursor:pointer;
+    background:#FFD54F;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+.answer{
+    margin:15px;
+    padding:15px;
+    background:#eee;
+    border-radius:10px;
+    cursor:pointer;
+    color:#222;
+}
+
+.answer:hover{
+    background:#FFD54F;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+<h1>🏛️ CHẶNG 1: KHỞI ĐẦU HÀNH TRÌNH</h1>
+
+
+<div class="book">
+
+<h2>📖 Khám phá lịch sử</h2>
+
+<p>
+Bạn bắt đầu hành trình khám phá thế giới tri thức.
+Hãy đọc thông tin và trả lời câu hỏi để mở khóa chặng tiếp theo.
+</p>
+
+
+<h3>
+Câu hỏi:
+</h3>
+
+<p>
+Đâu là cách tốt nhất để tìm hiểu lịch sử?
+</p>
+
+
+<div class="answer" onclick="check(true)">
+A. Đọc sách và tìm hiểu nguồn tư liệu
+</div>
+
+
+<div class="answer" onclick="check(false)">
+B. Chỉ nghe người khác kể lại
+</div>
+
+
+<div class="answer" onclick="check(false)">
+C. Bỏ qua các tài liệu lịch sử
+</div>
+
+
+<p id="result"></p>
+
+
+</div>
+
+
+<button onclick="location.href='map.html'">
+⬅ Quay lại bản đồ
+</button>
+
+
+</div>
+
+
+<script>
+
+function check(correct){
+
+let result=document.getElementById("result");
+
+if(correct){
+
+result.innerHTML="🎉 Chính xác! Bạn nhận được 10 điểm.";
+
+result.style.color="#00ff88";
+
+}else{
+
+result.innerHTML="❌ Chưa đúng, hãy thử lại!";
+
+result.style.color="red";
+
+}
+
+}
+
+</script>
+
+
+</body>
+</html>
