@@ -3,107 +3,64 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hành trình khám phá</title>
+<title>Bản đồ hành trình</title>
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,Helvetica,sans-serif;
-}
-
 body{
-background:linear-gradient(180deg,#06142b,#081b39,#0f2d5c);
-height:100vh;
+margin:0;
+background:#081b33;
+font-family:Arial;
 overflow:hidden;
-color:white;
 }
 
 h1{
+color:white;
 text-align:center;
-padding-top:30px;
-font-size:48px;
-color:#FFD54F;
-text-shadow:0 0 15px gold;
-}
-
-p{
-text-align:center;
-margin-top:10px;
-font-size:20px;
-color:#ddd;
+padding:20px;
 }
 
 .map{
-
 position:relative;
 width:100%;
-height:75vh;
-
-}
-
-.line{
-
-position:absolute;
-height:6px;
-background:#4fc3f7;
-box-shadow:0 0 15px cyan;
-border-radius:10px;
-
+height:85vh;
+background:linear-gradient(#0b2f59,#1b5d91);
 }
 
 .stage{
 
 position:absolute;
-width:90px;
-height:90px;
+
+width:80px;
+height:80px;
+
 border-radius:50%;
+
+background:gold;
+
 display:flex;
 justify-content:center;
 align-items:center;
+
 font-size:30px;
+font-weight:bold;
+
 cursor:pointer;
+
+box-shadow:0 0 20px gold;
+
 transition:.3s;
-box-shadow:0 0 25px #4fc3f7;
 
 }
 
 .stage:hover{
-
 transform:scale(1.15);
-
 }
 
-.open{
-
-background:#2196F3;
-
-}
-
-.lock{
-
-background:#555;
-
-}
-
-.finish{
-
-background:#ff9800;
-
-}
-
-.info{
-
+svg{
 position:absolute;
-top:20px;
-right:20px;
-background:rgba(255,255,255,.1);
-padding:15px 20px;
-border-radius:15px;
-backdrop-filter:blur(8px);
-
+width:100%;
+height:100%;
 }
 
 </style>
@@ -112,68 +69,33 @@ backdrop-filter:blur(8px);
 
 <body>
 
-<h1>🗺 HÀNH TRÌNH KHÁM PHÁ</h1>
-
-<p>Hoàn thành từng chặng để mở khóa chặng tiếp theo</p>
-
-<div class="info">
-
-⭐ Điểm: 0
-
-<br><br>
-
-⏰ 00:00
-
-</div>
+<h1>🗺️ HÀNH TRÌNH MÃI MÃI TUỔI HAI MƯƠI</h1>
 
 <div class="map">
 
-<div class="line" style="left:140px;bottom:130px;width:180px;transform:rotate(-28deg);"></div>
+<svg>
 
-<div class="line" style="left:330px;bottom:250px;width:220px;transform:rotate(18deg);"></div>
+<line x1="10%" y1="75%" x2="30%" y2="60%" stroke="white" stroke-width="6"/>
 
-<div class="line" style="left:560px;bottom:200px;width:200px;transform:rotate(-35deg);"></div>
+<line x1="30%" y1="60%" x2="50%" y2="35%" stroke="white" stroke-width="6"/>
 
-<div class="line" style="left:760px;bottom:350px;width:180px;transform:rotate(20deg);"></div>
+<line x1="50%" y1="35%" x2="70%" y2="50%" stroke="white" stroke-width="6"/>
 
-<div class="stage open"
-style="left:80px;bottom:70px;"
-onclick="location.href='chang1.html'">
+<line x1="70%" y1="50%" x2="88%" y2="20%" stroke="white" stroke-width="6"/>
 
-1
+</svg>
 
-</div>
+<div class="stage" style="left:8%;top:70%;" onclick="location='stage1.html'">1</div>
 
-<div class="stage lock"
-style="left:300px;bottom:210px;">
+<div class="stage" style="left:28%;top:55%;" onclick="location='stage2.html'">2</div>
 
-🔒
+<div class="stage" style="left:48%;top:30%;" onclick="location='stage3.html'">3</div>
 
-</div>
+<div class="stage" style="left:68%;top:45%;" onclick="location='stage4.html'">4</div>
 
-<div class="stage lock"
-style="left:560px;bottom:150px;">
-
-🔒
-
-</div>
-
-<div class="stage lock"
-style="left:760px;bottom:320px;">
-
-🔒
-
-</div>
-
-<div class="stage finish"
-style="right:100px;top:80px;">
-
-🏆
-
-</div>
+<div class="stage" style="left:86%;top:15%;" onclick="location='stage5.html'">🏆</div>
 
 </div>
 
 </body>
-
 </html>
