@@ -130,7 +130,10 @@ let result=document.getElementById("result");
 
 if(correct){
 
-result.innerHTML="🎉 Chính xác! Bạn nhận được 10 điểm.";
+localStorage.setItem("score",10);
+localStorage.setItem("stage2","open");
+
+result.innerHTML="🎉 Chính xác! Bạn nhận được 10 điểm.<br><br>🚂 Chặng tiếp theo đã được mở!";
 
 result.style.color="#00ff88";
 
