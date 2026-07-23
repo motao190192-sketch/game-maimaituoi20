@@ -178,14 +178,18 @@ style="right:70px;top:60px;">
 </div>
 
 <script src="script.js"></script>
-<div class="stage lock"
+<script>
 
-id="stage2"
+if(localStorage.getItem("stage2")=="open"){
 
-style="left:320px;bottom:240px;">
+let stage2=document.getElementById("stage2");
 
-🔒🚂
+stage2.classList.remove("lock");
 
-</div>
+stage2.innerHTML="🚂";
+
+}
+
+</script>
 </body>
 </html>
