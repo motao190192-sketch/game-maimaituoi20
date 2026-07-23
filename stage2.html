@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chặng 2 - Tác giả</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:linear-gradient(180deg,#071b34,#114b7a);
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+}
+
+.container{
+width:90%;
+max-width:900px;
+}
+
+.title{
+text-align:center;
+font-size:42px;
+color:#FFD54F;
+margin-bottom:30px;
+text-shadow:0 0 15px gold;
+}
+
+.book{
+background:white;
+color:#333;
+padding:35px;
+border-radius:20px;
+box-shadow:0 0 30px rgba(0,0,0,.5);
+animation:fade .8s;
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.book h2{
+color:#1565C0;
+margin-bottom:20px;
+}
+
+.book p{
+font-size:18px;
+line-height:1.8;
+margin-bottom:20px;
+}
+
+.question{
+font-size:22px;
+font-weight:bold;
+margin-bottom:20px;
+}
+
+.answer{
+padding:15px;
+background:#ececec;
+margin:15px 0;
+border-radius:12px;
+cursor:pointer;
+transition:.3s;
+}
+
+.answer:hover{
+background:#FFD54F;
+transform:scale(1.02);
+}
+
+#result{
+margin-top:20px;
+font-size:22px;
+font-weight:bold;
+text-align:center;
+}
+
+.back{
+margin-top:30px;
+text-align:center;
+}
+
+.back button{
+padding:14px 35px;
+font-size:18px;
+border:none;
+border-radius:12px;
+background:#FFD54F;
+cursor:pointer;
+}
+
+.back button:hover{
+transform:scale(1.05);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="title">
+📖 CHẶNG 2 - TÁC GIẢ
+</div>
+
+<div class="book">
+
+<h2>Tìm hiểu tác giả</h2>
+
+<p>
+Mỗi cuốn sách đều gắn với một tác giả mang trong mình những trải nghiệm, suy nghĩ và khát vọng. Hiểu về tác giả sẽ giúp chúng ta hiểu sâu hơn giá trị của tác phẩm.
+</p>
+
+<div class="question">
+❓ Câu hỏi:
+Ai là tác giả của cuốn sách mà trò chơi này đang giới thiệu?
+</div>
+
+<div class="answer" onclick="check(true)">
+A. (Điền tên tác giả của sách bạn)
+</div>
+
+<div class="answer" onclick="check(false)">
+B. Nguyễn Du
+</div>
+
+<div class="answer" onclick="check(false)">
+C. Nam Cao
+</div>
+
+<p id="result"></p>
+
+<div class="back">
+<button onclick="location.href='map.html'">
+⬅ Quay lại bản đồ
+</button>
+</div>
+
+</body>
+</html>
+  <script>
+
+function check(correct){
+
+let result = document.getElementById("result");
+
+if(correct){
+
+let score = Number(localStorage.getItem("score") || 0);
+score += 10;
+
+localStorage.setItem("score", score);
+localStorage.setItem("stage3","open");
+
+result.innerHTML="🎉 Chính xác!<br><br>+10 điểm<br>🌲 Chặng 3 đã được mở!";
+result.style.color="#00aa44";
+
+}else{
+
+result.innerHTML="❌ Chưa chính xác, hãy đọc lại nội dung rồi thử lại.";
+result.style.color="red";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
+</div>
