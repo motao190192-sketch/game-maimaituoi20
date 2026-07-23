@@ -141,17 +141,19 @@ onclick="location.href='stage.html'">
 
 </div>
 
-<div class="stage lock"
+<script>
 
-id="stage2"
+function openStage2(){
 
-style="left:320px;bottom:240px;"
+if(localStorage.getItem("stage2")=="open"){
 
-onclick="openStage2()">
+location.href="stage2.html";
 
-🔒🚂
+}
 
-</div>
+}
+
+</script>
 
 <div class="stage lock"
 
@@ -181,7 +183,19 @@ style="right:70px;top:60px;">
 
 <script src="script.js"></script>
 <script>
+<script>
 
+function goStage2(){
+
+if(localStorage.getItem("stage2")=="open"){
+
+window.location.href="stage2.html";
+
+}
+
+}
+
+</script>
 if(localStorage.getItem("stage2")=="open"){
 
 let stage2=document.getElementById("stage2");
